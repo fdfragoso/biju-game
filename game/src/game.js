@@ -44,22 +44,25 @@ var createItems = function() {
     Crafty.c("item", {
     
         item_num: 0,
-    
-        init: function() {
-            //this.initItem(1);
-        },
         
-        initItem: function(num, x, y) {
+        initItem: function(num, x, y, posx, posy, clickCallback) {
             this.item_num = num;
-            
             var item_class = "item-sprite-" + this.item_num;
-            
             this.addComponent("2D, Canvas, Color, Mouse, " + item_class);
             
             this.x = x;
             this.y = y;
+            this.posx = posx;
+            this.posy = posy;
+            
             this.w = 60;
             this.h = 60;
+            
+            this._clickCallback = clickCallback;
+            
+            this.bind("Click", function(obj) {
+                if (this._clickCallback) clickCallback(this.posx, this.posy, this);
+            });
             
             return this;
         }
@@ -73,6 +76,8 @@ var createBoard = function() {
     const DISTANCE_BETWEEN_ITEMS = 8;
 
     Crafty.c("board", {
+    
+        clickedFirst: null,
         
         init: function() {
             this.addComponent("2D, Canvas, Color");
@@ -96,13 +101,55 @@ var createBoard = function() {
                 {
                     var item_value = Math.floor(Math.random() * 7);
                     
+                    var that = this;
+                    
                     this.board_items[i][j] = Crafty.e("item").initItem(
                                                 item_value, 
                                                 BOARD_X + DISTANCE_BETWEEN_ITEMS + ((DISTANCE_BETWEEN_ITEMS+ITEM_W) * i), 
-                                                BOARD_Y + DISTANCE_BETWEEN_ITEMS + ((DISTANCE_BETWEEN_ITEMS+ITEM_H) * j)
+                                                BOARD_Y + DISTANCE_BETWEEN_ITEMS + ((DISTANCE_BETWEEN_ITEMS+ITEM_H) * j),
+                                                i,
+                                                j,
+                                                function (i, j, obj) {
+                                                    that.clickItem(that, i, j, obj);
+                                                }
                     );
                 }
             }
+        },
+        
+        clickItem: function(that, i, j, obj) {
+            if (that.clickedFirst != null) { 
+                that.swapItems(that.clickedFirst, obj);
+            
+                that.clickedFirst = null;
+            }
+            else {
+                that.clickedFirst = obj;
+            }
+            
+        },
+        
+        swapItems: function(item1, item2) {
+        
+            var temp = item1;
+            item1 = item2;
+            item2 = temp;
+            
+            var tempx = item1.x;
+            item1.x = item2.x;
+            item2.x = tempx;
+            
+            var tempy = item1.y;
+            item1.y = item2.y;
+            item2.y = tempy;
+            
+            var tempposx = item1.posx;
+            item1.posx = item2.posx;
+            item2.posx = tempposx;
+            
+            var tempposy = item1.posy;
+            item1.posy = item2.posy;
+            item2.posy = tempposy;
         }
         
     });
