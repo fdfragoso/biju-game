@@ -93,6 +93,9 @@ var createBoard = function() {
         boardInit: function() {
             this.board_items = new Array(8);
             
+            var i_last = -1;
+            var i_last_count = 1;
+            
             for (var i = 0; i < this.board_items.length; i++)
             {
                 this.board_items[i] = new Array(8);
@@ -100,6 +103,17 @@ var createBoard = function() {
                 for (var j = 0; j < this.board_items[i].length; j++)
                 {
                     var item_value = Math.floor(Math.random() * 7);
+                    
+                    if (i_last == item_value)
+                    {
+                        if (++i_last_count == 3) {
+                            if (++item_value == 7) item_value = 0;
+                        }
+                    }
+                    else {
+                        i_last = item_value;
+                        i_last_count = 1;
+                    }
                     
                     var that = this;
                     
@@ -114,6 +128,9 @@ var createBoard = function() {
                                                 }
                     );
                 }
+                    
+                i_last = -1;
+                i_last_count = 1;
             }
         },
         
