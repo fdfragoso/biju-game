@@ -115,6 +115,14 @@ var createBoard = function() {
                         i_last_count = 1;
                     }
                     
+                    if (i > 1) 
+                    {
+                        if (this.board_items[i-1][j].item_num == item_value && this.board_items[i-2][j].item_num == item_value)
+                        {
+                            if (++item_value == 7) item_value = 0;
+                        }
+                    }
+                    
                     var that = this;
                     
                     this.board_items[i][j] = Crafty.e("item").initItem(
