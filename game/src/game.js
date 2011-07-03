@@ -118,6 +118,8 @@ var createBoard = function() {
         },
         
         clickItem: function(that, i, j, obj) {
+            obj.color("#FFFFFF");
+        
             if (that.clickedFirst != null) { 
                 that.swapItems(that.clickedFirst, obj);
             
@@ -130,6 +132,9 @@ var createBoard = function() {
         },
         
         swapItems: function(item1, item2) {
+        
+            item1.color(0);
+            item2.color(0);
         
             var temp = item1;
             item1 = item2;
