@@ -122,8 +122,6 @@ var createBoard = function() {
         
             if (that.clickedFirst != null) { 
                 that.swapItems(that.clickedFirst, obj);
-                
-                that.printItems();
             
                 that.clickedFirst = null;
             }
