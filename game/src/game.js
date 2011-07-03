@@ -145,9 +145,12 @@ var createBoard = function() {
         clickItem: function(that, i, j, obj) {
             obj.color("#FFFFFF");
         
-            if (that.clickedFirst != null) { 
-                that.swapItems(that.clickedFirst, obj);
+            if (that.clickedFirst != null) {
+                if (that.isNeighboor(that.clickedFirst, obj))
+                    that.swapItems(that.clickedFirst, obj);
             
+                that.clickedFirst.color(0);
+                obj.color(0);
                 that.clickedFirst = null;
             }
             else {
@@ -156,10 +159,18 @@ var createBoard = function() {
             
         },
         
-        swapItems: function(item1, item2) {
+        isNeighboor: function(item1, item2) {
+            var ret = false;
+            
+            if (item1.posx > 0) ret |= this.board_items[item1.posx-1][item1.posy] == item2;
+            if (item1.posx < 6) ret |= this.board_items[item1.posx+1][item1.posy] == item2;
+            if (item1.posy > 0) ret |= this.board_items[item1.posx][item1.posy-1] == item2;
+            if (item1.posy < 6) ret |= this.board_items[item1.posx][item1.posy+1] == item2;
         
-            item1.color(0);
-            item2.color(0);      
+            return ret;
+        },
+        
+        swapItems: function(item1, item2) {      
             
             var tempx = item1.x;
             item1.x = item2.x;
