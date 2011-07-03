@@ -122,6 +122,8 @@ var createBoard = function() {
         
             if (that.clickedFirst != null) { 
                 that.swapItems(that.clickedFirst, obj);
+                
+                that.printItems();
             
                 that.clickedFirst = null;
             }
@@ -134,11 +136,7 @@ var createBoard = function() {
         swapItems: function(item1, item2) {
         
             item1.color(0);
-            item2.color(0);
-        
-            var temp = item1;
-            item1 = item2;
-            item2 = temp;
+            item2.color(0);      
             
             var tempx = item1.x;
             item1.x = item2.x;
@@ -155,7 +153,26 @@ var createBoard = function() {
             var tempposy = item1.posy;
             item1.posy = item2.posy;
             item2.posy = tempposy;
-        }
+            
+            this.board_items[item1.posx][item1.posy] = item1;
+            this.board_items[item2.posx][item2.posy] = item2;
+        },
+        
+        printItems: function() {
+            var text_to_print = "";
+        
+            for (var i = 0; i < this.board_items.length; i++)
+            {   
+                for (var j = 0; j < this.board_items[i].length; j++)
+                {
+                    text_to_print += this.board_items[i][j].item_num + " ";
+                }
+                
+                text_to_print += "\n";
+            }
+            
+            alert(text_to_print);
+        },
         
     });
 }
