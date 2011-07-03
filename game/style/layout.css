@@ -8,3 +8,8 @@ h1 {
     font-family: Arial;
     color: #FFFFFF;
 }
+
+#cr-stage { 
+    margin: auto; 
+    border: 5px solid #FFFFFF; 
+}

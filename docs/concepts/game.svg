@@ -25,8 +25,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.6975"
-     inkscape:cx="259.79096"
-     inkscape:cy="270.62569"
+     inkscape:cx="371.17576"
+     inkscape:cy="379.83056"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -499,6 +499,57 @@
          id="path3018-8-8"
          d="m 717.33845,492.36218 -15.25244,19.33673 29.65803,40.66327 30.34197,-40.66327 -14.92227,-19.33673 z"
          style="fill:#0000ff;stroke:none" />
+    </g>
+    <g
+       id="g4587"
+       inkscape:export-filename="/home/crocidb/Projetos/biju-game/game/img/item.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="translate(-99.865195,-115.06372)">
+      <rect
+         y="492.36218"
+         x="100.46748"
+         height="60"
+         width="60"
+         id="rect2989-21"
+         style="opacity:0.98999999;fill:#ff0000;fill-opacity:1;stroke:none" />
+      <path
+         sodipodi:nodetypes="cccccc"
+         inkscape:connector-curvature="0"
+         id="path3018-1"
+         d="m 175.71992,492.36218 -15.25244,19.33673 29.65803,40.66327 30.34197,-40.66327 -14.92227,-19.33673 z"
+         style="fill:#0000ff;stroke:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3788-70"
+         d="m 251.47588,492.36218 -31.0084,60 60,0 z"
+         style="fill:#ff00ff;stroke:none" />
+      <rect
+         transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+         y="128.86633"
+         x="567.93365"
+         height="41.932228"
+         width="41.932232"
+         id="rect2989-7-4"
+         style="opacity:0.98999999;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:0.69887048;stroke-opacity:0" />
+      <path
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="path3859-30"
+         d="m 340.46748,510.00924 30.92209,-17.64706 29.07791,17.64706 0,24.70588 -29.07791,17.64706 -30.78026,-17.64706 z"
+         style="fill:#ff6600;stroke:none" />
+      <path
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:connector-curvature="0"
+         id="path3859-9-23"
+         d="m 400.46748,510.00924 11.37007,-12.91451 19.55202,-4.73255 18.62993,4.73255 10.44798,12.91451 0,24.70588 -10.44798,12.9145 -18.62993,4.73256 -19.48111,-4.73256 -11.29915,-12.9145 z"
+         style="fill:#e6e6e6;stroke:none" />
+      <path
+         sodipodi:nodetypes="ccccccccc"
+         inkscape:connector-curvature="0"
+         id="path3859-98-99"
+         d="m 460.46748,508.79396 15.46105,-16.43178 29.99999,0 14.53896,16.43178 0,27.13645 -14.53896,16.43177 -29.92908,0 -15.39013,-16.43177 z"
+         style="fill:#008000;stroke:none" />
     </g>
   </g>
 </svg>
