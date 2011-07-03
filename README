@@ -1,3 +1,29 @@
-A bejeweled game.
+About
+----------------
 
-=]
+This is a remake of Bejeweled game in Javascript. I used the Crafty.js game engine.
+
+
+Status
+----------------
+
+The game is not playable. All it does so far is generate a random puzzle (free from matches) and move pieces.
+
+
+ToDo
+----------------
+
+It's somehow in the right order to. :)
+
+ ~> Make the mechanics work. When you match at least three equal pieces, the game should destroy them and 'spawn' new ones
+ ~> Write an algorithm to validate whether there's solution to the puzzle or not
+ ~> Add a counter which decreases on time but increases when you make a match
+ ~> Make better graphics, animation, etc...
+
+
+References
+----------------
+
+Crafty.js - https://github.com/louisstow/Crafty
+
+Game Page - http://crocidb.com/labs/biju-game/
