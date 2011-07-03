@@ -4,6 +4,7 @@ const ITEM_H = 60;
 window.onload = function()
 {
     Crafty.init(800, 600);
+    Crafty.canvas.init();
     
     createBackground();
     createItems();
